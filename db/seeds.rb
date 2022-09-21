@@ -8,6 +8,7 @@
 
 
 50.times do |i|
-  client = Client.create(first_name: 'Client', last_name: i.to_s)
+  birthdate = rand(15..25).years.ago
+  client = Client.create(first_name: 'Client', last_name: i.to_s, birthdate: birthdate)
   client.create_profile(dark_mode: [true, false].sample)
 end
